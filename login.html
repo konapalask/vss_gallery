@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - srisailam trip 🔥</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box inner_border">
+            <h1>Welcome Back</h1>
+            <h2 class="side_heading">VSS Gallery</h2>
+            
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+                </div>
+                
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="Enter your password">
+                </div>
+                
+                <button type="submit" class="login-button">Sign In</button>
+            </form>
+            
+            <p id="login-message" class="login-message"></p>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="index.html" class="etg_link">← Back to Gallery</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase Integration (Optional - you can add auth logic in this script or a separate one) -->
+    <script type="module" src="firebase-init.js"></script>
+    <script>
+        // Placeholder for the logic you will add later
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            console.log('Login attempt for:', email);
+            
+            const msgEl = document.getElementById('login-message');
+            msgEl.textContent = 'Auth logic will go here...';
+            msgEl.style.color = '#38bdf8';
+        });
+    </script>
+</body>
+</html>
