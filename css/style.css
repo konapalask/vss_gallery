@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #f8fafc;
+    min-height: 100vh;
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 2.5rem;
+    background: -webkit-linear-gradient(45deg, #38bdf8, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 20px 0;
+    text-align: center;
+    letter-spacing: -0.5px;
+}
+
+table.main_table {
+    padding-top: 20px;
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+table.main_table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+table.thumbs_table {
+    margin: 20px auto;
+    border-spacing: 15px;
+    border-collapse: separate;
+}
+
+td.inner_border {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+}
+
+td.td_thumbnail_title {
+    text-align: center;
+    vertical-align: top;
+    padding: 10px 10px 15px 10px;
+    max-width: 150px;
+    color: #94a3b8;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+td.td_thumbnail_image {
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px;
+}
+
+img.img_thumbnail_image {
+    border: 2px solid transparent;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: auto;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #0f172a;
+    display: block;
+}
+
+td.td_thumbnail_image a {
+    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+img.img_thumbnail_image:hover {
+    transform: scale(1.05) translateY(-5px);
+    border-color: #38bdf8;
+    box-shadow: 0 20px 25px -5px rgba(56, 189, 248, 0.2), 0 10px 10px -5px rgba(56, 189, 248, 0.1);
+}
+
+img.img_full_size_image {
+    border: 0px none;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+div.header-footer {
+    text-align: center;
+    padding: 15px;
+    margin: 0 auto;
+    max-width: 90%;
+}
+
+div.header-footer:empty {
+    padding: 0px;
+}
+
+td.header-footer {
+    padding: 15px;
+    text-align: center;
+}
+
+.pagination {
+    display: inline-flex;
+    margin: 20px auto;
+    padding: 8px;
+    background: rgba(15, 23, 42, 0.6);
+    border-radius: 50px;
+    gap: 5px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pagination > li {
+    display: inline;
+    list-style: none;
+}
+
+.pagination > li > a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    padding: 0 15px;
+    color: #cbd5e1;
+    text-decoration: none;
+    background-color: transparent;
+    border-radius: 20px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.pagination > li > a:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.pagination > .active > a, 
+.pagination > .active > a:hover {
+    color: #fff;
+    cursor: default;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+    transform: none;
+}
+
+.etg_link_text {
+    color: #64748b;
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+}
+
+a.etg_link {
+    color: #94a3b8;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+a.etg_link:hover {
+    color: #38bdf8;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+table.thumbs_table td {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Add delays to thumbnails */
+table.thumbs_table tr:nth-child(1) td { animation-delay: 0.1s; }
+table.thumbs_table tr:nth-child(2) td { animation-delay: 0.2s; }
+table.thumbs_table tr:nth-child(3) td { animation-delay: 0.3s; }
+table.thumbs_table tr:nth-child(4) td { animation-delay: 0.4s; }
+table.thumbs_table tr:nth-child(5) td { animation-delay: 0.5s; }
