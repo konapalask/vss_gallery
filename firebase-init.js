@@ -4,7 +4,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebas
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 import { getStorage } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-storage.js";
-import { getAuth, onAuthStateChanged, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBF07-DNoECLPVMV0_afsMSnHNCBbt9QOM",
@@ -43,7 +43,7 @@ try {
     console.log("Firebase successfully initialized");
     
     // Expose to window for global access
-    window.firebase = { app, analytics, db, storage, auth, signInWithEmailAndPassword };
+    window.firebase = { app, analytics, db, storage, auth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup };
 } catch (error) {
     console.error("Firebase initialization error:", error);
 }
